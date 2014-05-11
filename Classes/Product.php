@@ -156,7 +156,7 @@ class Product {
                 }
             }
 			
-			if($_FILES['product_image']['tmp_name'])
+			if(isset($_FILES['product_image']['tmp_name']))
 			{
             $imageupload = $_FILES['product_image']['tmp_name'];
             $imageupload_name = $_FILES['product_image']['name'];
