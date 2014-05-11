@@ -1,0 +1,56 @@
+table #content
+{
+    border-collapse:collapse;
+    min-height: 20%;
+    min-width: 30%;
+}
+table #content, td #content, th #content
+{
+    padding: 10px;
+    border:1px solid black;
+}
+div .content{
+    padding:10px;
+    min-width: 25%;
+    float: left;
+}
+body {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
+}
+
+table {
+    font-size: 1em;
+}
+
+.demo-description {
+    clear: both;
+    padding: 12px;
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+.ui-draggable, .ui-droppable {
+    background-position: top;
+}
+
+.tableoverflow tr:nth-child(odd){ 
+    background: #b8d1f3;
+}
+.search th{
+    background: #CCCCCC;
+    width:100px;
+}
+
+.tableoverflow{
+    overflow:scroll;
+    height:100px;
+}
+
+.tableoverflow td{
+    width:100px;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
