@@ -90,25 +90,24 @@ $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('L2', 'ขนาด')
             ->setCellValue('M2', 'วันที่รับสินค้า')
             ->setCellValue('N2', ' Barcode สินค้า(,)')
-            ->setCellValue('O2', ' Barcode สหดีเซล')
-            ->setCellValue('P2', 'เลขที่ใบสั่งซื้อ')
-            ->setCellValue('Q2', 'เตือนเมื่อจำนวนสินค้าต่ำกว่า')
-            ->setCellValue('R2', 'ตำแหน่งสินค้า ')
-            ->setCellValue('S2', 'จำนวน')
-            ->setCellValue('T2', ' note');
+            ->setCellValue('O2', 'เลขที่ใบสั่งซื้อ')
+            ->setCellValue('P2', 'เตือนเมื่อจำนวนสินค้าต่ำกว่า')
+            ->setCellValue('Q2', 'ตำแหน่งสินค้า ')
+            ->setCellValue('R2', 'จำนวน')
+            ->setCellValue('S2', ' note');
 			
 			if(count($subCategoryOptions)>0)
 			{
 				if($subCategoryOptions>=1)
-					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('U2', $subCategoryOptions[0]);
+					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('T2', $subCategoryOptions[0]);
 				if($subCategoryOptions>=2)
-					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('V2',  $subCategoryOptions[1]);
+					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('U2',  $subCategoryOptions[1]);
 				if($subCategoryOptions>=3)
-					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('W2', $subCategoryOptions[2]);
+					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('V2', $subCategoryOptions[2]);
             	if($subCategoryOptions>=4)
-					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('X2',  $subCategoryOptions[3]);
+					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('W2',  $subCategoryOptions[3]);
             	if($subCategoryOptions>=5)
-					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('Y2',  $subCategoryOptions[4]);
+					$objPHPExcel->setActiveSheetIndex(0)->setCellValue('X2',  $subCategoryOptions[4]);
 			}
 			
 			
