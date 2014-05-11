@@ -21,40 +21,40 @@ class Product {
             else$product_image = "";
         if (!empty($data['barCode']))
             $barCode = $data['barCode'];
-        
-            else$barCode = "";
+            else
+			$barCode = "";
         if (!empty($data['subCategory']))
             $subCategory = $data['subCategory'];
-        
-            else$subCategory = "";
+            else
+			$subCategory = "";
         if (!empty($data['productBrand']))
             $productBrand = $data['productBrand'];
-        
-            else$productBrand = "";
+            else
+			$productBrand = "";
         if (!empty($data['supplier']))
             $supplier = $data['supplier'];
-        
-            else$supplier = "";
+            else
+			$supplier = "";
         if (!empty($data['productName']))
             $productName = $data['productName'];
-        
-            else$productName = "";
+            else
+			$productName = "";
         if (!empty($data['productCode']))
             $productCode = $data['productCode'];
-        
-            else$productCode = "";
+            else
+			$productCode = "";
         if (!empty($data['qTy']))
             $qTy = $data['qTy'];
-        
-            else$qTy = "";
+            else
+			$qTy = "";
         if (!empty($data['size']))
             $size = $data['size'];
-        
-            else$size = "";
+            else
+			$size = "";
         if (!empty($data['poNo']))
             $poNo = $data['poNo'];
-        
-            else$poNo = "";
+            else
+			$poNo = "";
         if (!empty($data['receivedDate']))
             $receivedDate = $data['receivedDate'];
 		else $receivedDate = "";
@@ -65,68 +65,68 @@ class Product {
 		
         if (!empty($data['safetyStock']))
             $safetyStock = $data['safetyStock'];
-        
-            else$safetyStock = "";
+            else
+			$safetyStock = "";
         if (!empty($data['carBrand']))
             $carBrand = $data['carBrand'];
-        
-            else$carBrand = "";
+            else
+			$carBrand = "";
         if (!empty($data['oemCode']))
             $oemCode = $data['oemCode'];
-        
-            else$oemCode = "";
+            else
+			$oemCode = "";
         if (!empty($data['buyPrice']))
             $buyPrice = $data['buyPrice'];
-        
-            else$buyPrice = "";
+            else
+			$buyPrice = "";
         if (!empty($data['sellPrice']))
             $sellPrice = $data['sellPrice'];
-        
-            else$sellPrice = "";
+            else
+			$sellPrice = "";
         if (!empty($data['price1']))
             $price1 = $data['price1'];
-        
-            else$price1 = "";
+            else
+			$price1 = "";
         if (!empty($data['price2']))
             $price2 = $data['price2'];
-        
-            else$price2 = "";
+            else
+			$price2 = "";
         if (!empty($data['price3']))
             $price3 = $data['price3'];
-        
-            else$price3 = "";
+            else
+			$price3 = "";
         if (!empty($data['option1']))
             $option1 = $data['option1'];
-        
-            else$option1 = "";
+            else
+			$option1 = "";
         if (!empty($data['option2']))
             $option2 = $data['option2'];
-        
-            else$option2 = "";
+            else
+			$option2 = "";
         if (!empty($data['option3']))
             $option3 = $data['option3'];
-        
-            else$option3 = "";
+            else
+			$option3 = "";
         if (!empty($data['option4']))
             $option4 = $data['option4'];
-        
-            else$option4 = "";
+            else
+			$option4 = "";
         if (!empty($data['option5']))
             $option5 = $data['option5'];
-        
-            else$option5 = "";
+            else
+			$option5 = "";
         if (!empty($data['sahaDieselBarcodeBuy']))
             $sahaDieselBarcodeBuy = $data['sahaDieselBarcodeBuy'];
-        
-            else$sahaDieselBarcodeBuy = "";
+            else
+			$sahaDieselBarcodeBuy = "";
         if (!empty($data['sahaDieselBarcodeSell']))
             $sahaDieselBarcodeSell = $data['sahaDieselBarcodeSell'];
-        
-            else$sahaDieselBarcodeSell = "";
+            else
+			$sahaDieselBarcodeSell = "";
         if (!empty($data['note']))
             $note = $data['note'];
-        
-            else$note = "";
+            else
+			$note = "";
         $qstring = "SELECT * FROM sub_category where name = '" . $subCategory . "'";
         $mydb = new Dbconnect();
         $result = $mydb->query($qstring);
@@ -180,7 +180,7 @@ class Product {
             $feedback = "success";
             return $feedback;
         } else {
-            echo ('false');
+           // echo ('false');
             echo(mysql_error());
             $feedback = "รหัสสินค้าซ้ำ";
             return $feedback;
@@ -190,120 +190,120 @@ class Product {
     public static function editProduct($data) {
         if (!empty($data['product_image']))
             $product_image = $data['product_image'];
-        
-            else$product_image = "";
+            else
+			$product_image = "";
         if (!empty($data['barCode']))
             $barCode = $data['barCode'];
-        
-            else$barCode = "";
+            else
+			$barCode = "";
         if (!empty($data['subCategory']))
             $subCategory = $data['subCategory'];
-        
-            else$subCategory = "";
+            else
+			$subCategory = "";
         if (!empty($data['productBrand']))
             $productBrand = $data['productBrand'];
-        
-            else$productBrand = "";
+            else
+			$productBrand = "";
         if (!empty($data['supplier']))
             $supplier = $data['supplier'];
-        
-            else$supplier = "";
+            else
+			$supplier = "";
         if (!empty($data['productName']))
             $productName = $data['productName'];
-        
-            else$productName = "";
+            else
+			$productName = "";
         if (!empty($data['productCode']))
             $productCode = $data['productCode'];
-        
-            else$productCode = "";
+            else
+			$productCode = "";
         if (!empty($data['qTy']))
             $qTy = $data['qTy'];
-        
-            else$qTy = "";
+            else
+			$qTy = "";
         if (!empty($data['size']))
             $size = $data['size'];
-        
-            else$size = "";
+            else
+			$size = "";
         if (!empty($data['poNo']))
             $poNo = $data['poNo'];
-        
-            else$poNo = "";
+            else
+			$poNo = "";
         if (!empty($data['receivedDate']))
             $receivedDate = $data['receivedDate'];
-        
-            else$receivedDate = "";
+            else
+			$receivedDate = "";
         if (!empty($data['safetyStock']))
             $safetyStock = $data['safetyStock'];
-        
-            else$safetyStock = "";
+            else
+			$safetyStock = "";
         if (!empty($data['carBrand']))
             $carBrand = $data['carBrand'];
-        
-            else$carBrand = "";
+            else
+			$carBrand = "";
         if (!empty($data['oemCode']))
             $oemCode = $data['oemCode'];
-        
-            else$oemCode = "";
+            else
+			$oemCode = "";
         if (!empty($data['buyPrice']))
             $buyPrice = $data['buyPrice'];
-        
-            else$buyPrice = "";
+            else
+			$buyPrice = "";
         if (!empty($data['sellPrice']))
             $sellPrice = $data['sellPrice'];
-        
-            else$sellPrice = "";
+            else
+			$sellPrice = "";
         if (!empty($data['price1']))
             $price1 = $data['price1'];
-        
-            else$price1 = "";
+            else
+			$price1 = "";
         if (!empty($data['price2']))
             $price2 = $data['price2'];
-        
-            else$price2 = "";
+            else
+			$price2 = "";
         if (!empty($data['price3']))
             $price3 = $data['price3'];
-        
-            else$price3 = "";
+            else
+			$price3 = "";
         if (!empty($data['option1']))
             $option1 = $data['option1'];
-        
-            else$option1 = "";
+            else
+			$option1 = "";
         if (!empty($data['option2']))
             $option2 = $data['option2'];
-        
-            else$option2 = "";
+            else
+			$option2 = "";
         if (!empty($data['option3']))
             $option3 = $data['option3'];
-        
-            else$option3 = "";
+            else
+			$option3 = "";
         if (!empty($data['option4']))
             $option4 = $data['option4'];
-        
-            else$option4 = "";
+            else
+			$option4 = "";
         if (!empty($data['option5']))
             $option5 = $data['option5'];
-        
-            else$option5 = "";
+            else
+			$option5 = "";
         if (!empty($data['sahaDieselBarcodeBuy']))
             $sahaDieselBarcodeBuy = $data['sahaDieselBarcodeBuy'];
-        
-            else$sahaDieselBarcodeBuy = "";
+            else
+			$sahaDieselBarcodeBuy = "";
         if (!empty($data['sahaDieselBarcodeSell']))
             $sahaDieselBarcodeSell = $data['sahaDieselBarcodeSell'];
-        
-            else$sahaDieselBarcodeSell = "";
+            else
+			$sahaDieselBarcodeSell = "";
         if (!empty($data['note']))
             $note = $data['note'];
-        
-            else$note = "";
+            else
+			$note = "";
         if (!empty($data['productId']))
             $productId = $data['productId'];
-        
-            else$note = "";
+            else
+			$productId = "";
         if (!empty($data['mainCategory']))
             $mainCategory = $data['mainCategory'];
-        
-            else$note = "";
+            else 
+			$mainCategory= "";
 
         $sql = "UPDATE product JOIN main_category ON main_category.name = '$mainCategory' JOIN sub_category ON main_category.category_id = sub_category.main_category_category_id AND sub_category.name = '$subCategory' set sub_category_sub_category_id = sub_category.sub_category_id, productBrand = '$productBrand', supplier = '$supplier', productName = '$productName', productCode = '$productCode', qTy = '$qTy', size = '$size', poNo = '$poNo', receivedDate = '$receivedDate', safetyStock = '$safetyStock', buyPrice = '$buyPrice', sellPrice = '$sellPrice', price1 = '$price1', price2 = '$price2', price3 = '$price3', option1 = '$option1', option2 = '$option2', option3 = '$option3', option4 = '$option4', option5 = '$option5',sahaDieselBarcodeBuy = '$sahaDieselBarcodeBuy',sahaDieselBarcodeSell = '$sahaDieselBarcodeSell',note = '$note' where idProduct = '$productId' ";
 //        echo $sql;
@@ -363,13 +363,181 @@ class Product {
             return $feedback;
         }
     }
+   public static function editProductFromProductCode($data) {
+         if (!empty($data['product_image']))
+            $product_image = $data['product_image'];
+            else
+			$product_image = "";
+        if (!empty($data['barCode']))
+            $barCode = $data['barCode'];
+            else
+			$barCode = "";
+        if (!empty($data['subCategory']))
+            $subCategory = $data['subCategory'];
+            else
+			$subCategory = "";
+        if (!empty($data['productBrand']))
+            $productBrand = $data['productBrand'];
+            else
+			$productBrand = "";
+        if (!empty($data['supplier']))
+            $supplier = $data['supplier'];
+            else
+			$supplier = "";
+        if (!empty($data['productName']))
+            $productName = $data['productName'];
+            else
+			$productName = "";
+        if (!empty($data['productCode']))
+            $productCode = $data['productCode'];
+            else
+			$productCode = "";
+        if (!empty($data['qTy']))
+            $qTy = $data['qTy'];
+            else
+			$qTy = "";
+        if (!empty($data['size']))
+            $size = $data['size'];
+            else
+			$size = "";
+        if (!empty($data['poNo']))
+            $poNo = $data['poNo'];
+            else
+			$poNo = "";
+        if (!empty($data['receivedDate']))
+            $receivedDate = $data['receivedDate'];
+            else
+			$receivedDate = "";
+        if (!empty($data['safetyStock']))
+            $safetyStock = $data['safetyStock'];
+            else
+			$safetyStock = "";
+        if (!empty($data['carBrand']))
+            $carBrand = $data['carBrand'];
+            else
+			$carBrand = "";
+        if (!empty($data['oemCode']))
+            $oemCode = $data['oemCode'];
+            else
+			$oemCode = "";
+        if (!empty($data['buyPrice']))
+            $buyPrice = $data['buyPrice'];
+            else
+			$buyPrice = "";
+        if (!empty($data['sellPrice']))
+            $sellPrice = $data['sellPrice'];
+            else
+			$sellPrice = "";
+        if (!empty($data['price1']))
+            $price1 = $data['price1'];
+            else
+			$price1 = "";
+        if (!empty($data['price2']))
+            $price2 = $data['price2'];
+            else
+			$price2 = "";
+        if (!empty($data['price3']))
+            $price3 = $data['price3'];
+            else
+			$price3 = "";
+        if (!empty($data['option1']))
+            $option1 = $data['option1'];
+            else
+			$option1 = "";
+        if (!empty($data['option2']))
+            $option2 = $data['option2'];
+            else
+			$option2 = "";
+        if (!empty($data['option3']))
+            $option3 = $data['option3'];
+            else
+			$option3 = "";
+        if (!empty($data['option4']))
+            $option4 = $data['option4'];
+            else
+			$option4 = "";
+        if (!empty($data['option5']))
+            $option5 = $data['option5'];
+            else
+			$option5 = "";
+        if (!empty($data['sahaDieselBarcodeBuy']))
+            $sahaDieselBarcodeBuy = $data['sahaDieselBarcodeBuy'];
+            else
+			$sahaDieselBarcodeBuy = "";
+        if (!empty($data['sahaDieselBarcodeSell']))
+            $sahaDieselBarcodeSell = $data['sahaDieselBarcodeSell'];
+            else
+			$sahaDieselBarcodeSell = "";
+        if (!empty($data['note']))
+            $note = $data['note'];
+            else
+			$note = "";
 
+
+		//check if productID exists
+		$getProduct = "SELECT * FROM product where product.productCode = '".$productCode."'";
+
+        $mydb = new Dbconnect();
+		$productQuery = $mydb->query($getProduct);
+		if(productQuery)
+		{
+			while ($row = $productQuery->fetch_array()) {
+            		$rows[] = $row['idProduct'];
+       		 }
+			 $productId = $rows[0];
+		}
+        $sql = "UPDATE product set productBrand = '$productBrand', supplier = '$supplier', productName = '$productName', productCode = '$productCode', qTy = '$qTy', size = '$size', poNo = '$poNo', receivedDate = '$receivedDate', safetyStock = '$safetyStock', buyPrice = '$buyPrice', sellPrice = '$sellPrice', price1 = '$price1', price2 = '$price2', price3 = '$price3', option1 = '$option1', option2 = '$option2', option3 = '$option3', option4 = '$option4', option5 = '$option5',sahaDieselBarcodeBuy = '$sahaDieselBarcodeBuy',sahaDieselBarcodeSell = '$sahaDieselBarcodeSell',note = '$note' where idProduct = '$productId' ";
+//        echo $sql;
+        //$mydb = new Dbconnect();
+        $objQuery = $mydb->query($sql);
+        if ($objQuery) {
+            $delBarcode = "DELETE FROM barcode WHERE product_idProduct= '" . $productId . "'";
+            $mydb->query($delBarcode);
+            $delOemcode = "DELETE FROM oem WHERE product_idProduct= '" . $productId . "'";
+            $mydb->query($delOemcode);
+            $delcarbrand = "DELETE FROM carbrand WHERE product_idProduct= '" . $productId . "'";
+            $mydb->query($delcarbrand);
+            if (!empty($barCode)) {
+//            $delBarcode = "DELETE FROM barcode WHERE product_idProduct= '" . $productId . "'";
+//            $mydb->query($delBarcode);
+                for ($x = 0; $x < count($barCode); $x++) {
+                    $barCodeSql = "insert into barcode(product_idProduct,barcode) values ('$productId', '$barCode[$x]')";
+                    $mydb->query($barCodeSql);
+                }
+            }
+            if (!empty($oemCode)) {
+//            $delOemcode = "DELETE FROM oem WHERE product_idProduct= '" . $productId . "'";
+//            $mydb->query($delOemcode);
+                for ($x = 0; $x < count($oemCode); $x++) {
+                    $oemCodeSql = "insert into oem(product_idProduct,oemcode) values ('$productId', '$oemCode[$x]')";
+                    $mydb->query($oemCodeSql);
+                }
+            }
+            if (!empty($carBrand)) {
+//            $delcarbrand = "DELETE FROM carbrand WHERE product_idProduct= '" . $productId . "'";
+//            $mydb->query($delcarbrand);
+                for ($x = 0; $x < count($carBrand); $x++) {
+                    $carbrandSql = "insert into carbrand(product_idProduct,carbrand) values ('$productId', '$carBrand[$x]')";
+                    $mydb->query($carbrandSql);
+                }
+            }
+
+            
+            $feedback = "แก้ไขสินค้า ID: ".$productId." เสร็จสิ้น";
+            return $feedback;
+        } else {
+            echo(mysql_error());
+            $feedback = "รหัสสินค้าซ้ำ";
+            return $feedback;
+        }
+    }
     public static function deleteProduct($data) {
         $productId = $data['productId'];
         $delBarcode = "DELETE FROM barcode WHERE product_idProduct= '" . $productId . "'";
         $mydb = new Dbconnect();
-        $BarcodeQuery = $mydb->query($delBarcode);
-        if ($BarcodeQuery) {
+
+          $BarcodeQuery = $mydb->query($delBarcode);
+           if ($BarcodeQuery) {
             $delOemcode = "DELETE FROM oem WHERE product_idProduct= '" . $productId . "'";
             $oemcodeQuery = $mydb->query($delOemcode);
             if ($oemcodeQuery) {
@@ -391,9 +559,50 @@ class Product {
                     }
                 }
             }
-        }
+	   }
     }
+	
+    public static function deleteProductFromProductCode($data) {
+		//$productId = $data['productCode'];
+		$productCode = $data['productCode'];
+		//check if productID exists
+		$getProduct = "SELECT * FROM product where product.productCode = '".$productCode."'";
 
+        $mydb = new Dbconnect();
+		$productQuery = $mydb->query($getProduct);
+		if(productQuery)
+		{
+			while ($row = $productQuery->fetch_array()) {
+            		$rows[] = $row['idProduct'];
+       		 }
+			 $productId = $rows[0];
+		   $delBarcode = "DELETE FROM barcode WHERE product_idProduct= '" . $productId . "'";
+          $BarcodeQuery = $mydb->query($delBarcode);
+           if ($BarcodeQuery) {
+            $delOemcode = "DELETE FROM oem WHERE product_idProduct= '" . $productId . "'";
+            $oemcodeQuery = $mydb->query($delOemcode);
+            if ($oemcodeQuery) {
+                $delCarbrand = "DELETE FROM carbrand WHERE product_idProduct= '" . $productId . "'";
+                $carbrandQuery = $mydb->query($delCarbrand);
+                if ($carbrandQuery) {
+                    $imgProduct = "select image from product where idProduct= '" . $productId . "'";
+                    $imgquery = $mydb->query($imgProduct);
+                    while ($img = $imgquery->fetch_array()) {
+                        $image = $img[0];
+                    }
+                    $delProduct = "DELETE FROM product WHERE idProduct= '" . $productId . "'";
+                    $productQuery = $mydb->query($delProduct);
+                    if ($productQuery) {
+                        if ($image[0] == 'p')
+                            unlink("uploads/" . $image);
+                        $feedback = "ลบสินค้า Code :".$productCode." เสร็จสิ้น";
+                        return $feedback;
+                    }
+                }
+            }
+          }
+	   }
+    }
     public static function getDetailProduct($data) {
         $productCode = $data;
 //        
