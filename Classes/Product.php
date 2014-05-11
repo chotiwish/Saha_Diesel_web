@@ -569,10 +569,10 @@ class Product {
 		$getProduct = "SELECT * FROM product where product.productCode = '".$productCode."'";
 
         $mydb = new Dbconnect();
-		$productQuery = $mydb->query($getProduct);
-		if(productQuery)
+		$getproductQuery = $mydb->query($getProduct);
+		if($getproductQuery)
 		{
-			while ($row = $productQuery->fetch_array()) {
+			while ($row = $getproductQuery->fetch_array()) {
             		$rows[] = $row['idProduct'];
        		 }
 			 $productId = $rows[0];
@@ -593,7 +593,7 @@ class Product {
                     $delProduct = "DELETE FROM product WHERE idProduct= '" . $productId . "'";
                     $productQuery = $mydb->query($delProduct);
                     if ($productQuery) {
-                        if ($image[0] == 'p')
+                        if ($image)
                             unlink("uploads/" . $image);
                         $feedback = "ลบสินค้า Code :".$productCode." เสร็จสิ้น";
                         return $feedback;
