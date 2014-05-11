@@ -10,9 +10,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form>
+        <form action="uploadexcel.php" target="_blank" method="post" enctype="multipart/form-data">
             เพิ่มสินค้าจาก Excel <br/>
-            Upload file : <input type="file">  <input type="submit" value="Upload">
+            Upload file : <input type="file" name="file" id="file">  <input type="submit" value="Upload">
             <button onClick="window.location = 'addproduct.php'">เพิ่มสินค้าด้วยตนเอง</button>
             <br>
             <table>
@@ -54,6 +54,6 @@ and open the template in the editor.
             ?>
 
 
-            <br/><input type="button" onclick="window.location.href = 'index.php'" value="กลับสู่หน้าแรก">
+            <br/><input type="button" onClick="window.location.href = 'index.php'" value="กลับสู่หน้าแรก">
             </body>
             </html>
