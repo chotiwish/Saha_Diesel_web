@@ -482,7 +482,7 @@ class Product {
 
         $mydb = new Dbconnect();
 		$productQuery = $mydb->query($getProduct);
-		if(productQuery)
+		if($productQuery)
 		{
 			while ($row = $productQuery->fetch_array()) {
             		$rows[] = $row['idProduct'];
