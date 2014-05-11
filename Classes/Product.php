@@ -580,7 +580,7 @@ class Product {
        		 }
 		 if($rows){
 			 
-			 $productId = $rows[0];
+		  $productId = $rows[0];
 			
 		   $delBarcode = "DELETE FROM barcode WHERE product_idProduct= '" . $productId . "'";
           $BarcodeQuery = $mydb->query($delBarcode);
@@ -608,6 +608,10 @@ class Product {
             }
 		   }
           }
+		  else{
+				$feedback = "ไม่พบสินค้า";
+				return $feedback;
+		  }
 	   }
     }
     public static function getDetailProduct($data) {
