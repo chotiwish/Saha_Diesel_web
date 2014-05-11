@@ -13,8 +13,6 @@ Uploading ....<br/>
 		$tempFileName = "temp_excel.xlsx";
 		$uploadDirectory= "uploads/";
 		$allowedExts = array("xlsx","xls");
-		$temp = explode(".", $_FILES["file"]["name"]);
-		$extension = end($temp);
 		$subCategoryID = '';
 		$subCategoryName = '';
 		$mainCategoryID = '';
