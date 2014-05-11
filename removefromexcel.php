@@ -21,30 +21,7 @@ Uploading ....<br/>
 		$mainCategoryName = '';
 		$dataArray =  array();
 
-	
-			//get Excel file
-	if ($_FILES["file"]["error"] > 0) {
-		  echo "Error: " . $_FILES["file"]["error"] . "<br>";
-	 } else if(in_array($extension, $allowedExts))
-	{
-	  echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-	  echo "Type: " . $_FILES["file"]["type"] . "<br>";
-	  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-	  echo "Stored in: " . $_FILES["file"]["tmp_name"]."<br/>";
-	//delete old file	if exist
-	 if (file_exists($uploadDirectory . $tempFileName)) {
-		 unlink($uploadDirectory.$tempFileName);
-      	 echo "Deleted temp file : ".$uploadDirectory.$tempFileName."<br/>";
-     } 
-		 //save file
-         move_uploaded_file($_FILES["file"]["tmp_name"],$uploadDirectory . $tempFileName);
-         echo "Successfully upload file to: " . $uploadDirectory. $tempFileName;
-	}else{
-		  echo " Invalid excel file format.Please upload again.";	
-	}
-	
-	
-	
+
 	//read excel file and loop through object 
 	 $objPHPExcel = PHPExcel_IOFactory::load($uploadDirectory.$tempFileName);
 	
@@ -200,15 +177,8 @@ Uploading ....<br/>
 		 foreach($objectArray as $obj)
 		 {
 			 //delete item from product excel
-			 //Product::deleteProductFromProductCode($obj);			
-			 //comment this out if want to delete item
-			 if(Product::insertProduct($obj)=="รหัสสินค้าซ้ำ")
-			 {
-					//edit item  
-					 echo Product::editProductFromProductCode($obj)."<br/>";
-			 }else{
-				 	echo "add product : ".$obj['productCode']." successful<br/>"; 
-			 }
+			echo Product::deleteProductFromProductCode($obj)."<br/>";			
+
 		 }
 	 }
 	 
