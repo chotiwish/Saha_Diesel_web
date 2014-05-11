@@ -575,7 +575,7 @@ class Product {
 			while ($row = $getproductQuery->fetch_array()) {
             		$rows[] = $row['idProduct'];
        		 }
-			 if($rows){
+			 if($getproductQuery->fetch_array()){
 			 $productId = $rows[0];
 		   $delBarcode = "DELETE FROM barcode WHERE product_idProduct= '" . $productId . "'";
           $BarcodeQuery = $mydb->query($delBarcode);
