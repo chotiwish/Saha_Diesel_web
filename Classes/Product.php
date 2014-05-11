@@ -17,8 +17,8 @@ class Product {
     public static function insertProduct($data) {
         if (!empty($data['product_image']))
             $product_image = $data['product_image'];
-        
-            else$product_image = "";
+            else
+			$product_image = "";
         if (!empty($data['barCode']))
             $barCode = $data['barCode'];
             else
@@ -156,7 +156,7 @@ class Product {
                 }
             }
 			
-			if($_FILES['product_image']['tmp_name'])
+			if(isset($_FILES['product_image']['tmp_name']))
 			{
             $imageupload = $_FILES['product_image']['tmp_name'];
             $imageupload_name = $_FILES['product_image']['name'];
@@ -342,9 +342,10 @@ class Product {
                     $mydb->query($carbrandSql);
                 }
             }
+			if(isset($_FILES['product_image']['tmp_name']))
+			{
             $imageupload = $_FILES['product_image']['tmp_name'];
             $imageupload_name = $_FILES['product_image']['name'];
-            if ($imageupload) {
                 $arraypic = explode(".", $imageupload_name); //แบ่งชื่อไฟล์กับนามสกุลออกจากกัน
                 $filename = "product" . $productId; //ชื่อไฟล์
                 $filetype = $arraypic[1]; //นามสกุลไฟล์
