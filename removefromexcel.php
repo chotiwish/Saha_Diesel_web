@@ -195,7 +195,7 @@ Uploading ....<br/>
 
         for ( $i = 0; $i < strlen($strBuyPrice); $i++)
         {
-            switch ($strBuyPrice[i])
+            switch ($strBuyPrice[$i])
             {
                 case "1":
                     $buyCode = $buyCode . "O";
@@ -242,7 +242,7 @@ Uploading ....<br/>
 
         for ( $i = 0; $i < strlen($strSellPrice); $i++)
         {
-            switch ($strSellPrice[i])
+            switch ($strSellPrice[$i])
             {
             case "1":
                 $sellCode = $sellCode."ก";
