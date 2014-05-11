@@ -155,9 +155,11 @@ class Product {
                     $mydb->query($carBrandSql);
                 }
             }
+			
+			if($_FILES['product_image']['tmp_name'])
+			{
             $imageupload = $_FILES['product_image']['tmp_name'];
             $imageupload_name = $_FILES['product_image']['name'];
-            if ($imageupload) {
                 $arraypic = explode(".", $imageupload_name); //แบ่งชื่อไฟล์กับนามสกุลออกจากกัน
                 $filename = "product" . $productId; //ชื่อไฟล์
                 $filetype = $arraypic[1]; //นามสกุลไฟล์
