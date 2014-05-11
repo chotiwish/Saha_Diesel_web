@@ -156,7 +156,7 @@ class Product {
                 }
             }
 			
-			if(isset($_FILES['product_image']['tmp_name']))
+			if($_FILES['product_image']['tmp_name'])
 			{
             $imageupload = $_FILES['product_image']['tmp_name'];
             $imageupload_name = $_FILES['product_image']['name'];
@@ -578,8 +578,10 @@ class Product {
 			while ($row = $getproductQuery->fetch_array()) {
             		$rows[] = $row['idProduct'];
        		 }
-			 if($getproductQuery->fetch_array()){
+		 if($rows){
+			 
 			 $productId = $rows[0];
+			
 		   $delBarcode = "DELETE FROM barcode WHERE product_idProduct= '" . $productId . "'";
           $BarcodeQuery = $mydb->query($delBarcode);
            if ($BarcodeQuery) {

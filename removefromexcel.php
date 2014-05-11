@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Removing Previous Items ....</title>
+<title>Upload Excel ....</title>
 </head>
 <body>
-Removing ....<br/>
+Uploading ....<br/>
 
 <?php
         require_once 'Classes/PHPExcel/IOFactory.php';
@@ -19,7 +19,8 @@ Removing ....<br/>
 		$mainCategoryName = '';
 		$dataArray =  array();
 
-
+	
+	
 	//read excel file and loop through object 
 	 $objPHPExcel = PHPExcel_IOFactory::load($uploadDirectory.$tempFileName);
 	
@@ -193,7 +194,7 @@ Removing ....<br/>
 
         for ( $i = 0; $i < strlen($strBuyPrice); $i++)
         {
-            switch ($strBuyPrice[$i])
+            switch ($strBuyPrice[i])
             {
                 case "1":
                     $buyCode = $buyCode . "O";
@@ -240,7 +241,7 @@ Removing ....<br/>
 
         for ( $i = 0; $i < strlen($strSellPrice); $i++)
         {
-            switch ($strSellPrice[$i])
+            switch ($strSellPrice[i])
             {
             case "1":
                 $sellCode = $sellCode."ก";

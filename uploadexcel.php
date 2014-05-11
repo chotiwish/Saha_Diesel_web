@@ -58,16 +58,16 @@ Uploading ....<br/>
                 echo "<br>The worksheet " . $worksheetTitle . " has ";
                 echo $nrColumns . ' columns (A-' . $highestColumn . ') ';
                 echo ' and ' . $highestRow . ' row.';
-                echo '<br>Data: <table border="1"><tr>';
+                echo '<br><table border="1"><tr>';
                 for ($row = 1; $row <= $highestRow; ++$row) {
-                    echo '<tr>';
+                   // echo '<tr>';
 					//init object every new row
 					$dataObject = '';
 					
                     for ($col = 0; $col < $highestColumnIndex; ++$col) {
                         $cell = $worksheet->getCellByColumnAndRow($col, $row);
                         $val = $cell->getValue();
-                        echo '<td>' . $val . '</td>';
+                      //  echo '<td>' . $val . '</td>';
 						
 						//add data to object array 
 						
@@ -177,8 +177,8 @@ Uploading ....<br/>
 						}
 						
                     }
-					 echo '<td>' . $subCategoryName . '</td>';
-                    echo '</tr>';
+					// echo '<td>' . $subCategoryName . '</td>';
+                    //echo '</tr>';
 					if($row>=3)
 					{
 					//add default data 
@@ -209,6 +209,7 @@ Uploading ....<br/>
 			 }else{
 				 	echo "add product : ".$obj['productCode']." successful<br/>"; 
 			 }
+			//echo Product::deleteProductFromProductCode($obj);		
 		 }
 	 }
 	 
