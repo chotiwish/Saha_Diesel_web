@@ -31,12 +31,12 @@ Uploading ....<br/>
                 $highestColumn = $worksheet->getHighestColumn(); // e.g 'F'
                 $highestColumnIndex = PHPExcel_Cell::columnIndexFromString($highestColumn);
                 $nrColumns = ord($highestColumn) - 64;
-                echo "<br>The worksheet " . $worksheetTitle . " has ";
-                echo $nrColumns . ' columns (A-' . $highestColumn . ') ';
-                echo ' and ' . $highestRow . ' row.';
-                echo '<br> <table border="1"><tr>';
+ //               echo "<br>The worksheet " . $worksheetTitle . " has ";
+ //               echo $nrColumns . ' columns (A-' . $highestColumn . ') ';
+  //              echo ' and ' . $highestRow . ' row.';
+  //              echo '<br> <table border="1"><tr>';
                 for ($row = 1; $row <= $highestRow; ++$row) {
-                    echo '<tr>';
+  //                  echo '<tr>';
 					//init object every new row
 					$dataObject = '';
 					
@@ -165,7 +165,7 @@ Uploading ....<br/>
 					array_push($dataArray,$dataObject);
 					}
                 }
-                echo '</table>';
+  //              echo '</table>';
 				//print_r($dataArray);
 				insertToProduct($dataArray);
             }
