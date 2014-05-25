@@ -99,7 +99,7 @@ if (!empty($_POST['submit'])) {
             <option>oemcode</option>
             <option>barcode</option>
         </select>
-        <button id="searchProduct">ค้นหา</button>
+        <button id="searchRemainingProduct">ค้นหา</button>
         <input type="button" onclick="window.location.href = 'index.php'" value="กลับสู่หน้าแรก">
             <div class="tableoverflow">
                 <table class="bodysearch">
@@ -111,6 +111,7 @@ if (!empty($_POST['submit'])) {
                     <th>หมวดหมู่ย่อย</th>
                     <th>note</th>
                     <th><span id="extra">code</span></th>
+                    <th>คงเหลือ</th>
                 </tr>
             </thead>
                         <tbody>
