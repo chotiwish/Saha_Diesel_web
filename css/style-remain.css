@@ -21,6 +21,7 @@ body {
 
 table {
     font-size: 1em;
+	table-layout:fixed;
 }
 
 .demo-description {
@@ -37,19 +38,17 @@ table {
 .tableoverflow tr:nth-child(odd){ 
     background: #b8d1f3;
 }
-.search th{
+.tableoverflow th{
     background: #CCCCCC;
-    width:100px;
 }
 
 .tableoverflow{
     overflow:scroll;
     height:600px;
+	table-layout:fixed;
 }
 
-.tableoverflow td{
-    width:100px;
-    max-width: 100px;
+.tableoverflow th,td{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

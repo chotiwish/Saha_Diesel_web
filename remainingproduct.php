@@ -97,8 +97,11 @@ if (!empty($_POST['submit'])) {
         </select>
         <button id="searchRemainingProduct">ค้นหา</button>
         <input type="button" onclick="window.location.href = 'index.php'" value="กลับสู่หน้าแรก">
-        <table class="search">
-            <thead>
+
+           
+            <div class="tableoverflow">
+                <table class="bodysearch">
+                              <thead>
                 <tr>
                     <th>รหัสสินค้า</th>
                     <th>ชื่อสินค้า</th>
@@ -109,18 +112,12 @@ if (!empty($_POST['submit'])) {
                     <th>คงเหลือ</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td colspan="7">
-            <div class="tableoverflow">
-                <table class="bodysearch">
-                    
+                        <tbody>
+        </tbody>
                 </table>
             </td>
                 </tr>
             </div>
-        </tbody>
-    </table>
    
 </body>
 
