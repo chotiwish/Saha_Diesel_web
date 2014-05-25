@@ -140,7 +140,8 @@ $(function() {
             }
         }
     });
-
+	
+	//in edit productPage
     $("#searchProduct").click(function() {
         var textSearch = $("#textSearchPro").val();
         var select = $("#searchType").val();
@@ -171,7 +172,37 @@ $(function() {
             });
         });
     });
-
+	
+	//remaining product page
+    $("#searchRemainingProduct").click(function() {
+        var textSearch = $("#textSearchPro").val();
+        var select = $("#searchType").val();
+		if(select == "ยี่ห้อรถ" || select == "oemcode" || select =="barcode")
+			$("#extra").text(select);
+		else
+			$("#extra").text("ตำแหน่งสินค้า");
+        var data = {"term": textSearch, "type": select};
+        var tablerow = "";
+        $(".bodysearch").find("tbody").remove().end();
+        $.getJSON("searchproduct.php", data, function(result) {
+            if (result == null) {
+                alert("ไม่พบสินค้า");
+            }
+            $.each(result, function(key, value) {
+                if ((key % 8 == 0)) {
+                    $(".bodysearch").append("<tr id=" + value + ">");
+                    tablerow = value;
+                }
+                else
+                    $(".bodysearch tr:last").append("<td>" + value + "</td>");
+			   
+					
+                $(".search tbody tr").hover(function() {
+                    $(this).css('cursor', 'hand');
+                });
+            });
+        });
+    });
     //edit category
     $("#selectCategory").change(function() {
         var selectValue = $("#selectCategory").val();

@@ -21,7 +21,7 @@
                 <td> <button id="add_product" onClick="window.location = 'addproduct.php'">เพิ่มสินค้าด้วยตนเอง</button></td>
                 <td> <button id="edit_product" onClick="window.location = 'editproduct.php'">แก้ไขสินค้าด้วยตนเอง</button></td>
                 <td> <button id="add_product_exel" onClick="window.location = 'importexcel.php'">เพิ่มสินค้าด้วย Excel</button></td>
-                <td> <button id="add_product_po">เพิ่มสินค้าจากใบสั่งซื้อ</button></td>
+                <td> <button id="add_product_exel" onClick="window.location = 'remainingproduct.php'">ตรวจสอบสินค้า</button></td>
             </tr>
         </table>
         

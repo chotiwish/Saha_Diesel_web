@@ -660,22 +660,22 @@ class Product {
         $term = $data[0];
         $product = null;
 		
-		$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note, product.itemLocation from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+		$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note, product.itemLocation,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
 		
         if (empty($term))
             if ($data[1] == "ยี่ห้อรถ")
 			{
-			    $qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,carbrand.carbrand from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+			    $qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,carbrand.carbrand,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
                 $where = "join carbrand on product.idProduct=carbrand.product_idProduct ";
 			}
 			else if ($data[1] == "oemcode")
 			{
-				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,oem.oemcode from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,oem.oemcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
                 $where = "join oem on product.idProduct=oem.product_idProduct";
 			}
 			else if ($data[1] == "barcode")
 			{
-				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,barcode.barcode from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,barcode.barcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
                 $where = "join barcode on product.idProduct=barcode.product_idProduct";
 			}
 			else{
@@ -692,17 +692,17 @@ class Product {
                 $where = "join barcode on product.idProduct=barcode.product_idProduct where sub_category.name like '%" . $term . "%'";
             else if ($data[1] == "ยี่ห้อรถ")
 			{
-				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,carbrand.carbrand from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,carbrand.carbrand,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
                 $where = "join carbrand on product.idProduct=carbrand.product_idProduct where carbrand.carbrand like '%" . $term . "%'";
 			}
 			else if ($data[1] == "oemcode")
 			{
-				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,oem.oemcode from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,oem.oemcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
                 $where = "join oem on product.idProduct=oem.product_idProduct where oem.oemcode like '%" . $term . "%'";
 			}
 			else if ($data[1] == "barcode")
 			{
-				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,barcode.barcode from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,barcode.barcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
                 $where = "join barcode on product.idProduct=barcode.product_idProduct where barcode.barcode like '%" . $term . "%'";
 			}
         }
@@ -719,6 +719,7 @@ class Product {
 				($data[4]!=null)?$product[] = $data[4]:$product[] = "";
 				($data[5]!=null)?$product[] = $data[5]:$product[] = "";
 				($data[6]!=null)?$product[] = $data[6]:$product[] = "";
+				($data[7]!=null)?$product[] = $data[7]:$product[] = "";
             }
         }
         return $product;
