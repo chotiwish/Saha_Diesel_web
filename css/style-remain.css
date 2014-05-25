@@ -44,7 +44,7 @@ table {
 
 .tableoverflow{
     overflow:scroll;
-    height:600px;
+    height:500px;
 	table-layout:fixed;
 }
 
