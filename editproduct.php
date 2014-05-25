@@ -100,6 +100,7 @@ if (!empty($_POST['submit'])) {
             <option>barcode</option>
         </select>
         <button id="searchProduct">ค้นหา</button>
+        <input type="button" onclick="window.location.href = 'index.php'" value="กลับสู่หน้าแรก">
         <table class="search">
             <thead>
                 <tr>
