@@ -1,0 +1,24 @@
+.topbar
+{
+	text-align:center;	
+}
+.leftinfo
+{
+	text-align:left;	
+}
+.rightinfo
+{
+	float:right;
+	margin:-2px 2px 0  0;
+}
+.barcodeItem
+{
+	border: 1px solid black;
+	width:110px;
+	margin:8px 4px 0 0 ;
+	float:left;
+}
+body
+{
+	font-size:10px;	
+}
