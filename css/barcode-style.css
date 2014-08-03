@@ -4,7 +4,12 @@
 }
 .leftinfo
 {
-	text-align:left;	
+	float: left;
+	margin-left: 2px;	
+}
+.centerinfo
+{
+	text-align: center;
 }
 .rightinfo
 {
@@ -14,9 +19,27 @@
 .barcodeItem
 {
 	border: 1px solid black;
-	width:110px;
+	width:180px;
 	margin:8px 4px 0 0 ;
 	float:left;
+	height:85px;
+    display:table;
+    text-align: center;
+    vertical-align: middle;
+}
+.barcodeContents
+{
+    display:table-cell;
+    vertical-align:middle;
+}
+.blankbarcodeItem
+{
+	display:block;
+	border: 1px solid gray;
+	width:180px;
+	margin:8px 4px 0 0 ;
+	float:left;
+	height:85px;
 }
 body
 {

@@ -655,7 +655,78 @@ class Product {
         } else
             echo (mysql_error());
     }
-
+	
+    public static function searchProductAndAllCodes($data) {
+        $term = $data[0];
+        $product = null;
+		
+		$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note, product.itemLocation,product.qty,product.sahaDieselBarcodeBuy,product.sahaDieselBarcodeSell from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+		
+        if (empty($term))
+            if ($data[1] == "ยี่ห้อรถ")
+			{
+			    $qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,carbrand.carbrand,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+                $where = "join carbrand on product.idProduct=carbrand.product_idProduct ";
+			}
+			else if ($data[1] == "oemcode")
+			{
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,oem.oemcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+                $where = "join oem on product.idProduct=oem.product_idProduct";
+			}
+			else if ($data[1] == "barcode")
+			{
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,barcode.barcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+                $where = "join barcode on product.idProduct=barcode.product_idProduct";
+			}
+			else{
+				//all other section 
+				$where = "";
+			}
+			
+        else {
+            if ($data[1] == "รหัสสินค้า")
+                $where = "join barcode on product.idProduct=barcode.product_idProduct where product.productCode like '%" . $term . "%'";
+            else if ($data[1] == "ชื่อสินค้า")
+                $where = "join barcode on product.idProduct=barcode.product_idProduct where product.productName like '%" . $term . "%'";
+            else if ($data[1] == "หมวดหมู่ย่อย")
+                $where = "join barcode on product.idProduct=barcode.product_idProduct where sub_category.name like '%" . $term . "%'";
+            else if ($data[1] == "ยี่ห้อรถ")
+			{
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,carbrand.carbrand,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+                $where = "join carbrand on product.idProduct=carbrand.product_idProduct where carbrand.carbrand like '%" . $term . "%'";
+			}
+			else if ($data[1] == "oemcode")
+			{
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,oem.oemcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+                $where = "join oem on product.idProduct=oem.product_idProduct where oem.oemcode like '%" . $term . "%'";
+			}
+			else if ($data[1] == "barcode")
+			{
+				$qstring = "select product.idProduct, product.productCode,  product.productName ,  product.productBrand  , sub_category.name , product.note,barcode.barcode,product.qty from product join sub_category on product.sub_category_sub_category_id=sub_category.sub_category_id ";
+                $where = "join barcode on product.idProduct=barcode.product_idProduct where barcode.barcode like '%" . $term . "%'";
+			}
+        }
+        $qstring .= $where;
+//        echo $qstring;
+        $mydb = new Dbconnect();
+        $result = $mydb->query($qstring);
+        if ($result) {
+            while ($data = $result->fetch_array()) {
+                ($data[0]!=null)?$product[] = $data[0]:$product[] = "";
+                ($data[1]!=null)?$product[] = $data[1]:$product[] = "";
+				($data[2]!=null)?$product[] = $data[2]:$product[] = "";
+				($data[3]!=null)?$product[] = $data[3]:$product[] = "";
+				($data[4]!=null)?$product[] = $data[4]:$product[] = "";
+				($data[5]!=null)?$product[] = $data[5]:$product[] = "";
+				($data[6]!=null)?$product[] = $data[6]:$product[] = "";
+				($data[7]!=null)?$product[] = $data[7]:$product[] = "";
+				($data[8]!=null)?$product[] = $data[8]:$product[] = "";
+				($data[9]!=null)?$product[] = $data[9]:$product[] = "";
+            }
+        }
+        return $product;
+    }
+	
     public static function searchProduct($data) {
         $term = $data[0];
         $product = null;
